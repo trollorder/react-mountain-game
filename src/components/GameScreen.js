@@ -21,6 +21,7 @@ function GameScreen() {
   const maximumCount = mountainBank.length;
   
   let props = mountainBank[cardCount]
+  console.log(mountainBank)
 
   function checkIfGameOver() {
     if (cardCount == maximumCount) {
@@ -96,7 +97,8 @@ function GameScreen() {
   
 
   useEffect(() => {
-    setModifiedHeight()   
+    setModifiedHeight()
+    mountainBank.sort(() => Math.random() - 0.5)   
   }, []);
 
     return (
