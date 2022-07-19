@@ -1,14 +1,24 @@
 import MountainCard from "./MountainCard";
+import GameOver from "./GameOver";
 import { mountainBank } from "./mountains/mountainBank";
 import React, { useState , useEffect} from 'react';
 import "../App.css";
+// Sound Stuff
+// Link: https://github.com/joshwcomeau/use-sound
+// Link2: https://www.joshwcomeau.com/react/announcing-use-sound-react-hook/
+import useSound from 'use-sound';
+import click1 from './sounds/click1.mp3';
+import click2 from './sounds/click2.mp3';
 
 function GameScreen() {
 
   const [cardCount, setCardCount] = useState(0)
   const [height, setHeight] = useState(0)
   const [score, setScore] = useState(0)
-  const maximumCount = 4;
+  const [play1] = useSound(click1)
+  const [play2] = useSound(click2)
+  const [evaluate, setEvaluate] =  useState(null)
+  const maximumCount = mountainBank.length;
   
   let props = mountainBank[cardCount]
 
@@ -26,7 +36,8 @@ function GameScreen() {
       if (realHeight > fakeHeight) {
         // Correct guess
         setScore(score + 1)
-        alert("correct!")
+        play1(); 
+        setEvaluate(true)
         if (cardCount < maximumCount) {
           setCardCount(cardCount + 1)
         }
@@ -37,7 +48,8 @@ function GameScreen() {
       if (realHeight < fakeHeight) {
         // Correct guess
         setScore(score + 1)
-        alert("correct!")
+        play1(); 
+        setEvaluate(true)
         if (cardCount < maximumCount) {
           setCardCount(cardCount + 1)
         }
@@ -46,7 +58,8 @@ function GameScreen() {
       }
     }
     //Handle wrong guesses
-    alert("wrong answer!")
+    play2(); 
+    setEvaluate(false)
     if (cardCount < maximumCount) {
       setCardCount(cardCount + 1)
     }
@@ -68,13 +81,27 @@ function GameScreen() {
       setHeight(-(Math.floor(Math.random() * 100) + 100));
     }
   }
+
+  function getEvaluate() {
+    if (evaluate == null) {
+      return ""
+    } else {
+      if (evaluate == true) {
+        return "Correct!"
+      } else {
+        return "Wrong!"
+      }
+  }
+}
+  
+
   useEffect(() => {
     setModifiedHeight()   
   }, []);
 
     return (
+    <div class='background-image spacer'>
       <div className="game-screen">
-        {/* {console.log(props)} */}
         <div className='container center'>
           {checkIfGameOver() ? (
             <h1>Game Over</h1>
@@ -84,19 +111,21 @@ function GameScreen() {
         </div>
         <div className='container center'>
         {checkIfGameOver() ? (
-          <h1>Game Over</h1>
+          <GameOver score={score}/>
           ) : (
-          <div className='container center'>
+          <div className='container center' >
+            <p className={evaluate ? "correct-ans" : "wrong-ans"}>{getEvaluate()}</p>
             <p>Compared to: {getModifiedHeight()}</p>
             <p>is {props.mountain}</p>
-            <button className="button1" onClick={() => checkCorrect(true)}>Higher</button>
-            <button className="button2" onClick={() => checkCorrect(false)}>Lower</button>
-            <p>Turn: {cardCount + 1}/4</p>
+            <button className="button1" onClick={() => {checkCorrect(true); } }>Higher</button>
+            <button className="button2" onClick={() => {checkCorrect(false);} }>Lower</button>
+            <p>Turn: {cardCount + 1}/{maximumCount}</p>
             <p>Score: {score}</p>
           </div>
         )}
         </div>
       </div>
+    </div>
     );
   }
   

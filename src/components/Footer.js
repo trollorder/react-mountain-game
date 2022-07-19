@@ -1,7 +1,7 @@
 function Footer() {
     return (
-      <div className="mountain-card">
-        <p>Footer</p>
+      <div className="footer">
+        <p><a href="https://github.com/chris-lye">@chris-lye</a></p>
       </div>
     );
   }

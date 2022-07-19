@@ -56,3 +56,47 @@ img {
   background-color: cadetblue;
   color: white;
 }
+
+.header {
+  padding: 10px 16px;
+  background: #555;
+  color: #f1f1f1;
+}
+
+.footer {
+  padding: 10px 16px;
+  background: #555;
+  color: #f1f1f1;
+}
+
+.parallax-image {
+  position : relative;
+  height : 100vh;
+  background-attachment: fixed;
+  background-position: top center;
+  background-size: cover;
+}
+
+/* style anchor tags */
+a, a:hover, a:active, a:visited { color: white; }
+
+/* Generated background image from: https://app.haikei.app/ */
+.background-image {
+  background-image: url('./components/svg/layered-peaks-haikei.svg');
+}
+
+.spacer {
+  aspect-ratio: 900/600;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.correct-ans {
+  color: green;
+}
+
+.wrong-ans {
+  color: red;
+}

@@ -1,7 +1,7 @@
 function Header() {
     return (
-      <div className="mountain-card">
-        <p>Header</p>
+      <div className="header">
+        <p>Higher or Lower</p>
       </div>
     );
   }

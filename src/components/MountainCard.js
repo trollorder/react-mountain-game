@@ -3,7 +3,7 @@ import "../App.css"
 function MountainCard(props) {
     return (
       <div className="mountain-card">
-        <h3>Mount {props.mountain}</h3>
+        <h3>{props.mountain}</h3>
         <div className="card">
             <img src={require('./mountains/' + props.imgLink)}  alt="Mountain"/>
         </div>
