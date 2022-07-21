@@ -6,9 +6,9 @@ export const mountainBank = [
         location: "Solukhumbu District, Province No. 1, Nepal"
     },
     {
-        mountain: "Kilimajaro",
+        mountain: "Kilimanjaro",
         height: 5895,
-        imgLink: "Mount Kilimajaro.jpg",
+        imgLink: "Mount Kilimanjaro.jpg",
         location: "Kilimanjaro Region, Tanzania"
     },
     {
