@@ -117,7 +117,7 @@ function GameScreen() {
           ) : (
           <div className='container center' >
             <p className={evaluate ? "correct-ans" : "wrong-ans"}>{getEvaluate()}</p>
-            <p>Compared to: {getModifiedHeight()}</p>
+            <p>Compared to: {getModifiedHeight()} metres</p>
             <p>is {props.mountain}</p>
             <button className="button1" onClick={() => {checkCorrect(true); } }>Higher</button>
             <button className="button2" onClick={() => {checkCorrect(false);} }>Lower</button>

@@ -2,25 +2,25 @@ export const mountainBank = [
     {
         mountain: "Mount Everest",
         height: 8849,
-        imgLink: "mt_everest_card.png",
+        imgLink: "Mount Everest.jpg",
         location: "Solukhumbu District, Province No. 1, Nepal"
     },
     {
         mountain: "Kilimajaro",
         height: 5895,
-        imgLink: "mt_kilimajaro_card.png",
+        imgLink: "Mount Kilimajaro.jpg",
         location: "Kilimanjaro Region, Tanzania"
     },
     {
         mountain: "Mount Fuji",
         height: 3776,
-        imgLink: "mt_fuji_card.png",
+        imgLink: "Mount Fuji.jpg",
         location: "Fuji-Hakone-Izu National Park"
     },
     {
         mountain: "Mount Washington",
         height: 1917,
-        imgLink: "mt_washington_card.png",
+        imgLink: "Mount Washington.jpg",
         location: "New Hampshire, US"
     },
     {mountain: "Aconcagua",height: 6961,imgLink: "Aconcagua.jpg",location: "Argentina"},
