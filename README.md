@@ -1,8 +1,8 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-This project was made for the SUTD 2022 Fifth Row Showcase. (I think? Idk I just offered to code this for fun.)
-Made for SUTD Mountaineering Club. Redefine your limits.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). <br>
+This project was made for the SUTD 2022 Fifth Row Showcase. (I think? Idk I just offered to code this for fun.) <br>
+Made for SUTD Mountaineering Club. Redefine your limits. <br>
 
 ## Available Scripts
 
