@@ -1,7 +1,7 @@
 function Header() {
     return (
-      <div className="header">
-        <p>Higher or Lower</p>
+      <div className="header chivo">
+        <p>Higher or Lower?</p>
       </div>
     );
   }

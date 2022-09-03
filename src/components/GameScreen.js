@@ -18,13 +18,13 @@ function GameScreen() {
   const [play1] = useSound(click1)
   const [play2] = useSound(click2)
   const [evaluate, setEvaluate] =  useState(null)
-  const maximumCount = mountainBank.length;
+  const maximumCount = 10;
   
   let props = mountainBank[cardCount]
   console.log(mountainBank)
 
   function checkIfGameOver() {
-    if (cardCount == maximumCount) {
+    if (cardCount === maximumCount) {
       return true
     }
     return false
@@ -69,7 +69,7 @@ function GameScreen() {
   }
 
   function getModifiedHeight() {
-    if (height != undefined) {
+    if (height !== undefined) {
       return (props.height + height)
     }
   }
@@ -87,7 +87,7 @@ function GameScreen() {
     if (evaluate == null) {
       return ""
     } else {
-      if (evaluate == true) {
+      if (evaluate === true) {
         return "Correct!"
       } else {
         return "Wrong!"
@@ -98,11 +98,12 @@ function GameScreen() {
 
   useEffect(() => {
     setModifiedHeight()
-    mountainBank.sort(() => Math.random() - 0.5)   
+    mountainBank.sort(() => Math.random() - 0.5)
+    mountainBank.length = 10;
   }, []);
 
     return (
-    <div class='background-image spacer'>
+    <div className='background-image spacer'>
       <div className="game-screen">
         <div className='container center'>
           {checkIfGameOver() ? (
@@ -117,12 +118,11 @@ function GameScreen() {
           ) : (
           <div className='container center' >
             <p className={evaluate ? "correct-ans" : "wrong-ans"}>{getEvaluate()}</p>
-            <p>Compared to: {getModifiedHeight()} metres</p>
-            <p>is {props.mountain}</p>
+            <p className="question-text">Compared to a height of <strong>{getModifiedHeight()}</strong> metres, is {props.mountain}</p>
             <button className="button1" onClick={() => {checkCorrect(true); } }>Higher</button>
             <button className="button2" onClick={() => {checkCorrect(false);} }>Lower</button>
             <p>Turn: {cardCount + 1}/{maximumCount}</p>
-            <p>Score: {score}</p>
+            <p className="score-box">Score: {score}</p>
           </div>
         )}
         </div>

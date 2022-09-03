@@ -7,7 +7,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 You will to first git clone the project. Make sure node.js is installed (along with the node package manager)
 In the project directory, you can run:
 ### `npm install`
-### `npm start`
+### `npm run start-react`
+
+Normally you would run "npm start" instead, but the project has been modified to include express for uploading to a web server.
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.

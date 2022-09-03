@@ -1,5 +1,6 @@
 body {
-  font-family: 'Lucida Console';
+  font-family: 'Baloo Bhai 2', cursive;
+  font-size: large;
 }
 
 .center {
@@ -36,8 +37,8 @@ img {
 .button1 {
   background-color: white; 
   color: black; 
-  border: 2px solid burlywood;
-  font-size: 24px;
+  border: 4px solid burlywood;
+  font-size: 50px;
 }
 
 .button1:hover {
@@ -48,8 +49,8 @@ img {
 .button2 {
   background-color: white; 
   color: black; 
-  border: 2px solid cadetblue;
-  font-size: 24px;
+  border: 4px solid cadetblue;
+  font-size: 50px;
 }
 
 .button2:hover {
@@ -99,4 +100,25 @@ a, a:hover, a:active, a:visited { color: white; }
 
 .wrong-ans {
   color: red;
+}
+
+.question-text {
+  font-size: larger;
+}
+
+.score-box{
+  border: 0.1em solid darkblue;
+  background-color: grey; 
+  color: black;
+  font-size: larger;
+}
+
+/* font */
+.bhai {
+  font-family: 'Baloo Bhai 2', cursive;
+
+}
+
+.chivo {
+  font-family: 'Chivo', sans-serif;
 }
