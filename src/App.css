@@ -108,7 +108,7 @@ a, a:hover, a:active, a:visited { color: white; }
 
 .score-box{
   border: 0.1em solid darkblue;
-  background-color: grey; 
+  background-color: #d1d1d1 ; 
   color: black;
   font-size: larger;
 }
